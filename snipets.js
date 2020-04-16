@@ -19,3 +19,21 @@ let isSunk = false;
 let shipLoc1 = 2;
 let ShipLoc2 = 3;
 let shipLoc3 = 4;
+
+
+while (isSunk == false){
+  guess = prompt("Please select a number between 0 - 6")
+  if(guess < 0 || guess > 6){
+    alert("Please select a valid number")
+  }else{
+    guesses++;
+    if(guess == shipLoc1 || guess == ShipLoc2 || guess == shipLoc3){
+      alert("You've hit something")
+      hit++;
+      if(hit == 3){
+        isSunk = true;
+        alert("You've sunk my battleship!")
+      }
+    }
+  }
+}
