@@ -16,9 +16,10 @@ let guesses = 0;
 let hit = 0;
 let isSunk = false;
 
-let shipLoc1 = 2;
-let ShipLoc2 = 3;
-let shipLoc3 = 4;
+
+let shipLoc1 = Math.floor(Math.random() * 5);
+let ShipLoc2 = shipLoc1 + 1;
+let shipLoc3 = ShipLoc2 + 1;
 
 
 while (isSunk == false){
@@ -37,3 +38,5 @@ while (isSunk == false){
     }
   }
 }
+let stats = "You took " + guesses + " guesses to sink the battleship, " + "this means your accuracy was " + ((3/guesses) * 100) + "%";
+alert(stats)
