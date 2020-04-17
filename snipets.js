@@ -51,32 +51,55 @@ alert(stats)
 - PRINT SOLUTION WITH HIGHEST SCORE
 */
 
-let scores = [60,50,60,58,54,54,58,50,52,54,48,69,
-              34,55,51,52,44,51,69,64,66,55,52,61,
-              46,31,57,52,44,18,41,53,55,61,51,44];
-let highScore = 0;
+// let scores = [60,50,60,58,54,54,58,50,52,54,48,69,
+//               34,55,51,52,44,51,69,64,66,55,52,61,
+//               46,31,57,52,44,18,41,53,55,61,51,44];
+// let highScore = 0;
 
-for(let i = 0; i < scores.length;i++){
-  output = "Bubble solution #" + i + " scores: " + scores[i] + "<br>";
-  document.write(output);
-  if(scores[i] > highScore){
-    highScore = scores[i];
-  }
-}
-let solutionCount = "Total number of tested solutions: " + "<b>" + scores.length + "</b>" + "<br>";
-document.write(solutionCount);
+// for(let i = 0; i < scores.length;i++){
+//   output = "Bubble solution #" + i + " scores: " + scores[i] + "<br>";
+//   document.write(output);
+//   if(scores[i] > highScore){
+//     highScore = scores[i];
+//   }
+// }
+// let solutionCount = "Total number of tested solutions: " + "<b>" + scores.length + "</b>" + "<br>";
+// document.write(solutionCount);
 
-let highestScore = "The solution's highest score is: " + "<b>" + highScore + "</b>" + "<br>";
-document.write(highestScore)
+// let highestScore = "The solution's highest score is: " + "<b>" + highScore + "</b>" + "<br>";
+// document.write(highestScore)
 
-/* ------ NEW TASK ------
-- display the number of solutions with the highest score (is there more than one?)
+// /* ------ NEW TASK ------
+// - display the number of solutions with the highest score (is there more than one?)
+// */
+
+// let bestSolution = [];
+// for (let i = 0; i < scores.length;i++){
+//   if(scores[i] == highScore){
+//     bestSolution.push(i)
+//   }
+// }
+// document.write("Solutions with the highest score: " + "<b>" + bestSolution + "<b>" + "<br>");
+
+
+/*
+------- TASK ----------
+Use functions to modify previous bubble co code
+Must do everything it did before
 */
 
-let bestSolution = [];
-for (let i = 0; i < scores.length;i++){
-  if(scores[i] == highScore){
-    bestSolution.push(i)
-  }
+let scores = [60, 50, 60, 58, 54, 54, 58, 50, 52, 54, 48, 69,
+  34, 55, 51, 52, 44, 51, 69, 64, 66, 55, 52, 61,
+  46, 31, 57, 52, 44, 18, 41, 53, 55, 61, 51, 44];
+
+function printAndGetHighScore(scores){
+  let highScore = 0;
+  let output = 0;
+  output = "Bubble solution #" + i + " scores: " + scores[i] + "<br>";
+  document.write(output);
+  for(let i=0;i<scores.length;i++){
+    if(scores[i] > highScore){
+      highScore = scores[i];
+    }
+  }return highScore;
 }
-document.write("Solutions with the highest score: " + "<b>" + bestSolution + "<b>" + "<br>");
