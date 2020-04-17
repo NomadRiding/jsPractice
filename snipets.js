@@ -95,11 +95,15 @@ let scores = [60, 50, 60, 58, 54, 54, 58, 50, 52, 54, 48, 69,
 function printAndGetHighScore(scores){
   let highScore = 0;
   let output = 0;
-  output = "Bubble solution #" + i + " scores: " + scores[i] + "<br>";
-  document.write(output);
   for(let i=0;i<scores.length;i++){
+    output = "Bubble solution #" + i + " scores: " + scores[i] + "<br>";
+    document.write(output);
     if(scores[i] > highScore){
       highScore = scores[i];
     }
   }return highScore;
 }
+
+let highScore = printAndGetHighScore(scores);
+document.write("Bubble tests: " + scores.length + "<br>");
+document.write("Highest bubble score: " + highScore + "<br>");
