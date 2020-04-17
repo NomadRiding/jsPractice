@@ -66,5 +66,17 @@ for(let i = 0; i < scores.length;i++){
 let solutionCount = "Total number of tested solutions: " + "<b>" + scores.length + "</b>" + "<br>";
 document.write(solutionCount);
 
-let highestScore = "The solution's highest score is: " + "<b>" + highScore + "</b>";
+let highestScore = "The solution's highest score is: " + "<b>" + highScore + "</b>" + "<br>";
 document.write(highestScore)
+
+/* ------ NEW TASK ------
+- display the number of solutions with the highest score (is there more than one?)
+*/
+
+let bestSolution = [];
+for (let i = 0; i < scores.length;i++){
+  if(scores[i] == highScore){
+    bestSolution.push(i)
+  }
+}
+document.write("Solutions with the highest score: " + "<b>" + bestSolution + "<b>" + "<br>");
