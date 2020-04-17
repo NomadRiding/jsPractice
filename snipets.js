@@ -107,3 +107,15 @@ function printAndGetHighScore(scores){
 let highScore = printAndGetHighScore(scores);
 document.write("Bubble tests: " + scores.length + "<br>");
 document.write("Highest bubble score: " + highScore + "<br>");
+
+function getBestResults(scores,highScore){
+  let bestSolution = [];
+  for (let i = 0; i < scores.length; i++) {
+    if (scores[i] == highScore) {
+      bestSolution.push(i)
+    }
+  }return bestSolution;
+}
+
+let bestSolution = getBestResults(scores,highScore);
+document.write("Solutions with the highest score: " + "<b>" + bestSolution + "<b>" + "<br>");
