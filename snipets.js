@@ -88,54 +88,79 @@ Use functions to modify previous bubble co code
 Must do everything it did before
 */
 
-let scores = [60, 50, 60, 58, 54, 54, 58, 50, 52, 54, 48, 69,
-  34, 55, 51, 52, 44, 51, 69, 64, 66, 55, 52, 61,
-  46, 31, 57, 52, 44, 18, 41, 53, 55, 61, 51, 44];
+// let scores = [60, 50, 60, 58, 54, 54, 58, 50, 52, 54, 48, 69,
+//   34, 55, 51, 52, 44, 51, 69, 64, 66, 55, 52, 61,
+//   46, 31, 57, 52, 44, 18, 41, 53, 55, 61, 51, 44];
 
-let costs = [.25,.27,.25,.25,.25,.25,.33,.31,.25,.29,.27,.22,
-  .31,.25,.25,.33,.21,.25,.25,.25,.28,.25,.24,.22,.20,.25,.30,
-  .25,.24,.25,.25,.25,.27,.25,.26,.29];
+// let costs = [.25,.27,.25,.25,.25,.25,.33,.31,.25,.29,.27,.22,
+//   .31,.25,.25,.33,.21,.25,.25,.25,.28,.25,.24,.22,.20,.25,.30,
+//   .25,.24,.25,.25,.25,.27,.25,.26,.29];
 
-function printAndGetHighScore(scores){
-  let highScore = 0;
-  let output = 0;
-  for(let i=0;i<scores.length;i++){
-    output = "Bubble solution #" + i + " scores: " + scores[i] + "<br>";
-    document.write(output);
-    if(scores[i] > highScore){
-      highScore = scores[i];
-    }
-  }return highScore;
-}
+// function printAndGetHighScore(scores){
+//   let highScore = 0;
+//   let output = 0;
+//   for(let i=0;i<scores.length;i++){
+//     output = "Bubble solution #" + i + " scores: " + scores[i] + "<br>";
+//     document.write(output);
+//     if(scores[i] > highScore){
+//       highScore = scores[i];
+//     }
+//   }return highScore;
+// }
 
-let highScore = printAndGetHighScore(scores);
-document.write("Bubble tests: " + scores.length + "<br>");
-document.write("Highest bubble score: " + highScore + "<br>");
+// let highScore = printAndGetHighScore(scores);
+// document.write("Bubble tests: " + scores.length + "<br>");
+// document.write("Highest bubble score: " + highScore + "<br>");
 
-function getBestResults(scores,highScore){
-  let bestSolution = [];
-  for (let i = 0; i < scores.length; i++) {
-    if (scores[i] == highScore) {
-      bestSolution.push(i)
-    }
-  }return bestSolution;
-}
+// function getBestResults(scores,highScore){
+//   let bestSolution = [];
+//   for (let i = 0; i < scores.length; i++) {
+//     if (scores[i] == highScore) {
+//       bestSolution.push(i)
+//     }
+//   }return bestSolution;
+// }
 
-let bestSolution = getBestResults(scores,highScore);
-document.write("Solutions with the highest score: " + "<b>" + bestSolution + "</b>" + "<br>");
+// let bestSolution = getBestResults(scores,highScore);
+// document.write("Solutions with the highest score: " + "<b>" + bestSolution + "</b>" + "<br>");
 
-function getMostCostEffectiveSolution(scores,costs,highScore){
-  let cost = 100;
-  let index;
-  for(let i = 0; i < scores.length; i++){
-    if(scores[i] == highScore){
-      if (cost > costs[i]) {
-        index = i;
-        cost = costs[i]
-      }
-    }
-  } return index;
-}
+// function getMostCostEffectiveSolution(scores,costs,highScore){
+//   let cost = 100;
+//   let index;
+//   for(let i = 0; i < scores.length; i++){
+//     if(scores[i] == highScore){
+//       if (cost > costs[i]) {
+//         index = i;
+//         cost = costs[i]
+//       }
+//     }
+//   } return index;
+// }
 
-let mostCostEffective = getMostCostEffectiveSolution(scores,costs,highScore);
-document.write("Bubble solution #" + "<b>" + mostCostEffective + "</b>" + " is the most cost effective." + "<br>");
+// let mostCostEffective = getMostCostEffectiveSolution(scores,costs,highScore);
+// document.write("Bubble solution #" + "<b>" + mostCostEffective + "</b>" + " is the most cost effective." + "<br>");
+
+
+/*
+---- OBJECTS -----
+PG. 183 in book;
+Unscramble the text to create and use an object
+*/
+
+let fido = {
+  name: "Fido",
+  weight: 20.2,
+  age : 4,
+  breed : "mixed",
+  activity : "fetch balls"
+};
+
+let bark;
+if(fido.weight > 20) {
+  bark = "WOOF WOOF"
+}else {
+  bark = "woof woof"
+};
+let speak = fido.name + " says " + bark + " when he wants to " + fido.activity;
+document.write(speak);
+
