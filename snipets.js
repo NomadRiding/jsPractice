@@ -147,20 +147,50 @@ PG. 183 in book;
 Unscramble the text to create and use an object
 */
 
-let fido = {
-  name: "Fido",
-  weight: 20.2,
-  age : 4,
-  breed : "mixed",
-  activity : "fetch balls"
+// let fido = {
+//   name: "Fido",
+//   weight: 20.2,
+//   age : 4,
+//   breed : "mixed",
+//   activity : "fetch balls"
+// };
+
+// let bark;
+// if(fido.weight > 20) {
+//   bark = "WOOF WOOF"
+// }else {
+//   bark = "woof woof"
+// };
+// let speak = fido.name + " says " + bark + " when he wants to " + fido.activity;
+// document.write(speak);
+
+/*
+------ PG. 189 --------
+Test code to see if the Taxi is a good choice */
+
+let taxi = {
+  make: "Webville Motors",
+  model: "Taxi",
+  year: 1955,
+  color: "yellow",
+  passengers: 4,
+  convertible: false,
+  mileage: 281341
 };
 
-let bark;
-if(fido.weight > 20) {
-  bark = "WOOF WOOF"
+function prequal(car){
+  if(car.mileage > 10000){
+    return false;
+  }else if (car.year > 1960) {
+    return false;
+  }
+  return true;
+}
+
+let worthALook = prequal(taxi);
+
+if(worthALook){
+  document.write("You gotta check out this " + taxi.make + " " + taxi.model);
 }else {
-  bark = "woof woof"
-};
-let speak = fido.name + " says " + bark + " when he wants to " + fido.activity;
-document.write(speak);
-
+  document.write("You should really pass on the " + taxi.make + " " + taxi.model);
+}
