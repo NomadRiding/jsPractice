@@ -168,29 +168,48 @@ Unscramble the text to create and use an object
 ------ PG. 189 --------
 Test code to see if the Taxi is a good choice */
 
-let taxi = {
-  make: "Webville Motors",
-  model: "Taxi",
-  year: 1955,
-  color: "yellow",
-  passengers: 4,
-  convertible: false,
-  mileage: 281341
-};
+// let taxi = {
+//   make: "Webville Motors",
+//   model: "Taxi",
+//   year: 1955,
+//   color: "yellow",
+//   passengers: 4,
+//   convertible: false,
+//   mileage: 281341
+// };
 
-function prequal(car){
-  if(car.mileage > 10000){
-    return false;
-  }else if (car.year > 1960) {
-    return false;
+// function prequal(car){
+//   if(car.mileage > 10000){
+//     return false;
+//   }else if (car.year > 1960) {
+//     return false;
+//   }
+//   return true;
+// }
+
+// let worthALook = prequal(taxi);
+
+// if(worthALook){
+//   document.write("You gotta check out this " + taxi.make + " " + taxi.model);
+// }else {
+//   document.write("You should really pass on the " + taxi.make + " " + taxi.model);
+// }
+
+
+let eightBall = {
+  index: 0,
+  advice: ["Yes!", "Maybe not", "Maybe", "not a chance", "Of course it will", "whatever", "I got stuff to do"],
+
+  shake: function () {
+    this.index = this.index + 1;
+    if (this.index >= this.advice.length) {
+      this.index = 0;
+    }
+  },
+  look: function () {
+    return this.advice[this.index];
   }
-  return true;
 }
 
-let worthALook = prequal(taxi);
-
-if(worthALook){
-  document.write("You gotta check out this " + taxi.make + " " + taxi.model);
-}else {
-  document.write("You should really pass on the " + taxi.make + " " + taxi.model);
-}
+eightBall.shake();
+console.log(eightBall.look())
