@@ -197,13 +197,21 @@ let sportyCar = {
   mileage: 2231
 }
 
-let worthALook = prequal(sportyCar);
-
-if (worthALook) {
-  document.write("You gotta check out this " + sportyCar.make + " " + sportyCar.model);
-} else {
-  document.write("You should really pass on the " + sportyCar.make + " " + sportyCar.model);
+function perqual(car){
+  if (car.mileage > 900000){
+    return false;
+  }else if (car.year > 1970){
+    return false
+  }
+  return true;
 }
+
+let worthALook = prequal(taxi);
+  if (worthALook){
+    document.write("Hey, what are you waiting for, test drive this bad boy")
+  } else{
+    document.write("I'd stay away from that")
+  }
 
 /*
 let eightBall = {
