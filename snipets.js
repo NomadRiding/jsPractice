@@ -168,34 +168,44 @@ Unscramble the text to create and use an object
 ------ PG. 189 --------
 Test code to see if the Taxi is a good choice */
 
-// let taxi = {
-//   make: "Webville Motors",
-//   model: "Taxi",
-//   year: 1955,
-//   color: "yellow",
-//   passengers: 4,
-//   convertible: false,
-//   mileage: 281341
-// };
+let taxi = {
+  make: "Webville Motors",
+  model: "Taxi",
+  year: 1955,
+  color: "yellow",
+  passengers: 4,
+  convertible: false,
+  mileage: 281341
+};
 
-// function prequal(car){
-//   if(car.mileage > 10000){
-//     return false;
-//   }else if (car.year > 1960) {
-//     return false;
-//   }
-//   return true;
-// }
+function prequal(car){
+  if(car.mileage > 10000){
+    return false;
+  }else if (car.year > 1960) {
+    return false;
+  }
+  return true;
+}
 
-// let worthALook = prequal(taxi);
+let sportyCar = {
+  make: " Chevrolet",
+  model: "Camaro",
+  year: 1955,
+  color: "black",
+  passengers: 2,
+  convertible: false,
+  mileage: 2231
+}
 
-// if(worthALook){
-//   document.write("You gotta check out this " + taxi.make + " " + taxi.model);
-// }else {
-//   document.write("You should really pass on the " + taxi.make + " " + taxi.model);
-// }
+let worthALook = prequal(sportyCar);
 
+if (worthALook) {
+  document.write("You gotta check out this " + sportyCar.make + " " + sportyCar.model);
+} else {
+  document.write("You should really pass on the " + sportyCar.make + " " + sportyCar.model);
+}
 
+/*
 let eightBall = {
   index: 0,
   advice: ["Yes!", "Maybe not", "Maybe", "not a chance", "Of course it will", "whatever", "I got stuff to do"],
@@ -213,3 +223,4 @@ let eightBall = {
 
 eightBall.shake();
 console.log(eightBall.look())
+*/
