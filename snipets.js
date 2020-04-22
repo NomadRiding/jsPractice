@@ -168,50 +168,50 @@ Unscramble the text to create and use an object
 ------ PG. 189 --------
 Test code to see if the Taxi is a good choice */
 
-let taxi = {
-  make: "Webville Motors",
-  model: "Taxi",
-  year: 1955,
-  color: "yellow",
-  passengers: 4,
-  convertible: false,
-  mileage: 281341
-};
+// let taxi = {
+//   make: "Webville Motors",
+//   model: "Taxi",
+//   year: 1955,
+//   color: "yellow",
+//   passengers: 4,
+//   convertible: false,
+//   mileage: 281341
+// };
 
-function prequal(car){
-  if(car.mileage > 10000){
-    return false;
-  }else if (car.year > 1960) {
-    return false;
-  }
-  return true;
-}
+// function prequal(car){
+//   if(car.mileage > 10000){
+//     return false;
+//   }else if (car.year > 1960) {
+//     return false;
+//   }
+//   return true;
+// }
 
-let sportyCar = {
-  make: " Chevrolet",
-  model: "Camaro",
-  year: 1955,
-  color: "black",
-  passengers: 2,
-  convertible: false,
-  mileage: 2231
-}
+// let sportyCar = {
+//   make: " Chevrolet",
+//   model: "Camaro",
+//   year: 1955,
+//   color: "black",
+//   passengers: 2,
+//   convertible: false,
+//   mileage: 2231
+// }
 
-function perqual(car){
-  if (car.mileage > 900000){
-    return false;
-  }else if (car.year > 1970){
-    return false
-  }
-  return true;
-}
+// function perqual(car){
+//   if (car.mileage > 900000){
+//     return false;
+//   }else if (car.year > 1970){
+//     return false
+//   }
+//   return true;
+// }
 
-let worthALook = prequal(taxi);
-  if (worthALook){
-    document.write("Hey, what are you waiting for, test drive this bad boy")
-  } else{
-    document.write("I'd stay away from that")
-  }
+// let worthALook = prequal(taxi);
+//   if (worthALook){
+//     document.write("Hey, what are you waiting for, test drive this bad boy")
+//   } else{
+//     document.write("I'd stay away from that")
+//   }
 
 /*
 let eightBall = {
@@ -232,3 +232,39 @@ let eightBall = {
 eightBall.shake();
 console.log(eightBall.look())
 */
+
+/*
+-------TASK PG. 194 --------
+Fill in the code
+crack the secret password
+*/
+
+function getSecret(file, secretPassword){
+  file.opened = file.opened + 1;
+  if( secretPassword == file.password){
+    return file.contents;
+  }else {
+    return "Invalid password! No secret for you.";
+  }
+};
+
+function setSecret(file, secretPassword, secret) {
+  if (secretPassword == file.password){
+    file.opened = 0;
+    file.contents = secret;
+  }
+};
+
+let superSecretFile = {
+  level: "Classified",
+  opened: 0,
+  password: 2,
+  contents: "Dr. Evel's next meeting is in Detroit."
+};
+
+let secret = getSecret(superSecretFile, 2);
+document.write(secret + "<br>")
+
+setSecret(superSecretFile,2, "Dr. Evel's next meeting is in Philadelphia");
+secret = getSecret(superSecretFile, 2);
+document.write(secret);
